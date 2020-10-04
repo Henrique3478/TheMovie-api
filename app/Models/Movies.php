@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Trending extends Model
+class Movies extends Model
 {
     /**
      * <b>SoftDeletes</b> Recurso utilizado para fazer deleção de registro lógico "sem excluir"
@@ -15,7 +15,7 @@ class Trending extends Model
     /**
      * <b>table</b> Informa qual é a tabela que o modelo irá utilizar
     */
-    protected $table = 'trendings';
+    protected $table = 'movies';
 
     /**
      * <b>primaryKey</b> Informa qual a é a chave primaria da tabela
@@ -27,19 +27,24 @@ class Trending extends Model
      *  
      */
     protected $fillable = [
-        'poster_path',
         'adult',
-        'overview',
-        'release_date',
-        'genre_ids',
-        'original_title',
+        'backdrop_path'
+        'id_genres',
+        'homepage'
         'original_language',
-        'title',
-        'backdrop_path',
+        'original_title',
+        'overview'
         'popularity',
-        'vote_count',
+        'poster_path'
+        'release_date',
+        'runtime'
+        'spoken_languages',
+        'status',
+        'tagline'
+        'title',
         'video',
         'vote_average',
+        'vote_count',
     ];
 
     /**
@@ -47,19 +52,24 @@ class Trending extends Model
      * OBS: A validação bail é responsável em parar a validação caso um das que tenha sido especificada falhe
      */
     public $rules = [
-        'poster_path'       => 'bail',
         'adult'             => 'bail|required|boolean',
-        'overview'          => 'bail|required',
-        'release_date'      => 'bail|required',
-        'genre_ids'         => 'bail|required|integer',
-        'original_title'    => 'bail|required',
-        'original_language' => 'bail|required',
-        'title'             => 'bail|required',
         'backdrop_path'     => 'bail',
+        'id_genres'         => 'bail|required',
+        'homepage'          => 'bail',
+        'original_language' => 'bail|required',
+        'original_title'    => 'bail|required',
+        'overview'          => 'bail',
         'popularity'        => 'bail|required|integer',
-        'vote_count'        => 'bail|required|integer',
+        'poster_path'       => 'bail|',
+        'release_date'      => 'bail|required',
+        'runtime'           => 'bail|date',
+        'spoken_languages'  => 'bail|required',
+        'status'            => 'bail|required',
+        'tagline'           => 'bail|',
+        'title'             => 'bail|required',
         'video'             => 'bail|required|boolean',
         'vote_average'      => 'bail|required|integer',
+        'vote_count'        => 'bail|required|integer' 
     ];
 
     /**
@@ -81,31 +91,36 @@ class Trending extends Model
      * O mesmo é utilizado em forma de facade.
      * OBS: Responsável em retornar uma coleção com os alias(apelido) atribuidos para cada coluna. 
      */
-    public $collection = "\App\Http\Resources\Trending::collection";
+    public $collection = "\App\Http\Resources\Movies::collection";
 
     /**
      * <b>resource</b>
      */
-    public $resource = "\App\Http\Resources\Trending";
+    public $resource = "\App\Http\Resources\Movies";
 
     /**
      * <b>map</b> Atributo responsável em atribuir um alias(Apelido), para a colunas do banco de dados
      * OBS: este atributo é utilizado no Metodo store e update da ApiControllerTrait
      */
     public $map = [
-        'poster_path'       => 'poster_path',
-        'adult'             => 'adult',
-        'overview'          => 'overview',
-        'release_date'      => 'release_date',
-        'genre_ids'         => 'genre_ids',
-        'original_title'    => 'original_title',
-        'original_language' => 'original_language',
-        'title'             => 'title',
+        'adult'             => 'adult' ,
         'backdrop_path'     => 'backdrop_path',
+        'id_genres'         => 'id_genres',
+        'homepage'          => 'homepage',
+        'original_language' => 'original_language',
+        'original_title'    => 'original_title',
+        'overview'          => 'overview',
         'popularity'        => 'popularity',
-        'vote_count'        => 'vote_count',
+        'poster_path'       => 'poster_path',
+        'release_date'      => 'release_date',
+        'runtime'           => 'runtime',
+        'spoken_languages'  => 'spoken_languages',
+        'status'            => 'status',
+        'tagline'           => 'tagline',
+        'title'             => 'title',
         'video'             => 'video',
         'vote_average'      => 'vote_average',
+        'vote_count'        => 'vote_count',
     ];
 
     /**
