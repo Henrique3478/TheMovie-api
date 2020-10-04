@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Models\Movies;
 use Illuminate\Http\Request;
@@ -46,7 +46,7 @@ class MoviesController extends Controller
      * <b>__construct</b> Método construtor da classe. O mesmo é utilizado, para que atribuir qual a model será utilizada.
      * Essa informação atribuida aqui, fica disponivel na ApiControllerTrait e é utilizada pelos seus metodos.
      */
-    public function __construct(Trending $model)
+    public function __construct(Movies $model)
     {
         $this->model = $model;
     }

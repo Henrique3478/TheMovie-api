@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::resources([
+    '/movies'           => 'Api\MoviesController',
     '/discover'         => 'Api\DiscoverController',
     '/genres'           => 'Api\GenresController',
     '/trending'         => 'Api\TrendingController'

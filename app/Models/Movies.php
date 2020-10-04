@@ -28,19 +28,19 @@ class Movies extends Model
      */
     protected $fillable = [
         'adult',
-        'backdrop_path'
+        'backdrop_path',
         'id_genres',
-        'homepage'
+        'homepage',
         'original_language',
         'original_title',
-        'overview'
+        'overview',
         'popularity',
-        'poster_path'
+        'poster_path',
         'release_date',
-        'runtime'
+        'runtime',
         'spoken_languages',
         'status',
-        'tagline'
+        'tagline',
         'title',
         'video',
         'vote_average',
