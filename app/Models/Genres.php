@@ -57,12 +57,12 @@ class Genres extends Model
      * O mesmo é utilizado em forma de facade.
      * OBS: Responsável em retornar uma coleção com os alias(apelido) atribuidos para cada coluna. 
      */
-    public $collection = "\App\Http\Resources\Trending::collection";
+    public $collection = "\App\Http\Resources\Genres::collection";
 
     /**
      * <b>resource</b>
      */
-    public $resource = "\App\Http\Resources\Trending";
+    public $resource = "\App\Http\Resources\Genres";
 
     /**
      * <b>map</b> Atributo responsável em atribuir um alias(Apelido), para a colunas do banco de dados
