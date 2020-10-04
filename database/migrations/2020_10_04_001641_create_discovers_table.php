@@ -14,7 +14,20 @@ class CreateDiscoversTable extends Migration
     public function up()
     {
         Schema::create('discovers', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('name');
+            $table->boolean('adult');
+            $table->string('overview');
+            $table->string('release_date');
+            $table->integer('genre_ids');
+            $table->string('original_title');
+            $table->string('original_language');
+            $table->string('title');
+            $table->string('backdrop_path')->nullable();
+            $table->integer('popularity');
+            $table->integer('vote_count');
+            $table->boolean('video');
+            $table->integer('vote_average');
             $table->timestamps();
         });
     }
