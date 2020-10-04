@@ -15,7 +15,7 @@ class CreateDiscoversTable extends Migration
     {
         Schema::create('discovers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('poster_path')->nullable();
             $table->boolean('adult');
             $table->string('overview');
             $table->string('release_date');

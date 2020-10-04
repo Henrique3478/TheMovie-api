@@ -18,9 +18,14 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::resources([
-    '/movies'           => 'Api\MoviesController',
-    '/discover'         => 'Api\DiscoverController',
-    '/genres'           => 'Api\GenresController',
-    '/trending'         => 'Api\TrendingController'
-]);
+// Route::resources([
+//     '/movies'           => 'Api\MoviesController',
+//     '/discover'         => 'Api\DiscoverController',
+//     '/genres'           => 'Api\GenresController',
+//     '/trending'         => 'Api\TrendingController'
+// ]);
+
+Route::get('/movies', 'Api\MoviesController@index');
+Route::get('/discover', 'Api\DiscoverController@index');
+Route::get('/genres', 'Api\GenresController@index');
+Route::get('/trending', 'Api\TrendingController@index');
