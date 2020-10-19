@@ -21,7 +21,7 @@ class CreateMoviesTable extends Migration
             $table->string('homepage')->nullable();
             $table->string('original_language');
             $table->string('original_title');
-            $table->string('overview')->nullable();
+            $table->longText('overview')->nullable();
             $table->integer('popularity');
             $table->string('poster_path')->nullable();
             $table->string('release_date');

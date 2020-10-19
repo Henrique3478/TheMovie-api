@@ -27,6 +27,7 @@ class Movies extends Model
      *  
      */
     protected $fillable = [
+        'id',
         'adult',
         'backdrop_path',
         'id_genres',
@@ -130,5 +131,10 @@ class Movies extends Model
     public function getPrimaryKey()
     {
         return $this->primaryKey;
+    }
+
+    public function genres()
+    {
+        return $this->belongsTo(Genres::class, 'id_genres', 'id');
     }
 }

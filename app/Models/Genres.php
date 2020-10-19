@@ -80,4 +80,5 @@ class Genres extends Model
     {
         return $this->primaryKey;
     }
+
 }
