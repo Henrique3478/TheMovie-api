@@ -18,7 +18,7 @@ class Movies extends JsonResource
             'id'                => $this->id,
             'backdrop_path'     => $this->backdrop_path,
             'adult'             => $this->adult,
-            'id_genres'         => $this->genres,
+            'genres'            => $this->genres,
             'homepage'          => $this->homepage,
             'original_language' => $this->original_language,
             'original_title'    => $this->original_title,
