@@ -17,7 +17,7 @@ class CreateDiscoversTable extends Migration
             $table->increments('id');
             $table->string('poster_path')->nullable();
             $table->boolean('adult');
-            $table->string('overview');
+            $table->longText('overview');
             $table->string('release_date');
             $table->integer('genre_ids');
             $table->string('original_title');
